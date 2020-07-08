@@ -41,7 +41,7 @@ public class ToDoApplication extends Application<ToDoConfiguration> {
     public void run(final ToDoConfiguration configuration,
                     final Environment environment) throws Exception {
         final ToDoListDAO toDoListDAO = new ToDoListDAO(hibernateBundle.getSessionFactory());
-        environment.jersey().register(new ToDoResource(toDoListDAO));
+        environment.jersey().register(new ToDoResource(toDoListDAO, configuration.getUsername()));
     }
 
 }

@@ -18,14 +18,19 @@ public class ToDoResource {
     private static Logger logger = LoggerFactory.getLogger(ToDoResource.class);
 
     private final ToDoListDAO toDoListDAO;
-    public ToDoResource(ToDoListDAO toDoListDAO){
+
+    private String username;
+
+    public ToDoResource(ToDoListDAO toDoListDAO, String username){
         this.toDoListDAO = toDoListDAO;
+        this.username = username;
     }
 
     @POST
     @UnitOfWork
     public long createToDo(TodoList todoList){
         logger.info("Create todo!!!");
+        todoList.setUsername(username);
         return toDoListDAO.create(todoList);
     }
 
@@ -41,6 +46,7 @@ public class ToDoResource {
     @UnitOfWork
     public TodoList updateTodo(@PathParam("id") long id, TodoList todoList){
         logger.info("Update todo !!!");
+        todoList.setUsername(username);
         return toDoListDAO.update(todoList);
 
     }

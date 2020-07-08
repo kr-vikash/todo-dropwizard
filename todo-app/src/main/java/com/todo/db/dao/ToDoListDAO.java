@@ -2,9 +2,7 @@ package com.todo.db.dao;
 
 import com.todo.db.TodoList;
 import io.dropwizard.hibernate.AbstractDAO;
-import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.internal.CriteriaImpl;
 
 import java.util.List;
 

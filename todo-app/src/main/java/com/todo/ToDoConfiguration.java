@@ -11,18 +11,13 @@ import javax.validation.constraints.NotNull;
 public class ToDoConfiguration extends Configuration {
     // TODO: implement service configuration
 
-//    @NotEmpty
-//    private String message;
-//
-//    @JsonProperty
-//    public String getMessage() {
-//        return message;
-//    }
-//
-//    @JsonProperty
-//    public void setMessage(String message) {
-//        this.message = message;
-//    }
+    @NotEmpty
+    @JsonProperty("username")
+    private String username;
+
+    public String getUsername(){
+       return this.username;
+    }
 
     @Valid
     @NotNull

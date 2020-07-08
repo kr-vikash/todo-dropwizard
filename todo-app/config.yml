@@ -3,23 +3,22 @@ logging:
   loggers:
     org.todo: DEBUG
 
-#message: Hello todo config
+username: Vikash
 
-#server:
-#  applicationConnectors:
-#    - type: http
-#      port: 8082
-#
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
 
 database:
-  driverClass: org.postgresql.Driver
+  driverClass: org.sqlite.JDBC
   user: todouser
   password: pass123
-  url: jdbc:postgresql://localhost:5432/tdlist
+  url: jdbc:sqlite:tdlist
   properties:
     charSet: UTF-8
-    hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect  #org.hibernate.dialect.MySQL5InnoDBDialect
-    hibernate.hbm2ddl.auto: create
+    hibernate.dialect: org.hibernate.dialect.SQLiteDialect  #org.hibernate.dialect.MySQL5InnoDBDialect
+#    hibernate.hbm2ddl.auto: create
 #  maxWaitForConnection: 1s
 #
 #  # the SQL query to run when validating a connection's liveness
